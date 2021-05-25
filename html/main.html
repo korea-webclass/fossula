@@ -1,12 +1,451 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&family=Roboto:wght@400;500&family=Unna:wght@400;700&display=swap">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script async src="../js/swiper.js"></script>
     <title>포슐라 - 포트폴리오</title>
 </head>
 <body>
-    
+    <div class="wrap">
+        <header id="header" class="header">
+            <div class="inner-center">
+                <div class="content">
+                    <h1 class="logo">
+                        <a href="#none" class="logo-link">
+                            <!-- <img src="../image/logo.png" class="logo-img" alt="포슐라 로고"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 24">
+                                <path data-name="Union 1" d="M58.373 17.513V7.918h3.055v7.195c0 4.186.08 5.688 1.874 5.688 3.989 0 5.924-9.86 5.924-12.55v-.333h3.054v15.607h-3.055V11.563C68.854 13.611 67.261 24 62.523 24c-3.487 0-4.15-3.276-4.15-6.487zM11.8 21.559a8.7 8.7 0 01-2.045-5.835A8.7 8.7 0 0111.8 9.889a7.7 7.7 0 015.944-2.441 7.715 7.715 0 015.946 2.441 8.724 8.724 0 012.045 5.835 8.724 8.724 0 01-2.045 5.835A7.744 7.744 0 0117.746 24a7.729 7.729 0 01-5.946-2.441zm2.7-11.467a11.577 11.577 0 00-1.09 5.632 11.564 11.564 0 001.09 5.628 3.553 3.553 0 003.246 1.848 3.54 3.54 0 003.236-1.851 11.622 11.622 0 001.1-5.632 11.62 11.62 0 00-1.1-5.628 3.54 3.54 0 00-3.236-1.851 3.553 3.553 0 00-3.241 1.854zm67.869 9.753c0-2.722 2.316-3.485 4.994-4.638A19.546 19.546 0 0092.945 12c-.02-2.713-1-3.847-3.271-3.847-2.085 0-2.6 1.552-3.06 2.983a2.208 2.208 0 01-2.075 1.705h-1.753a7.108 7.108 0 016.883-5.278C92.5 7.565 96 8.383 96 12.23v11.295h-3.055v-1.349a10.422 10.422 0 01-5.245 1.7c-4.808.003-5.326-2.817-5.326-4.031zm7.019-3.826c-1.985 1.55-3.291 2.339-3.291 4.138 0 4.228 4.874 3.036 6.843 1.441v-8.64a36.239 36.239 0 01-3.547 3.061zM42.405 19.36h2.055a2.184 2.184 0 011.94 1.199c.864 1.676 1.929 2.552 3.346 2.552a2.7 2.7 0 002.573-1.247c.879-1.458-.693-2.985-1.759-3.663-.166-.1-4.763-2.787-5-2.948-1.537-1.021-2.321-2.2-2.321-3.519 0-2.741 2.864-4.169 5.7-4.169a6.773 6.773 0 016.632 4.14h-1.896A1.873 1.873 0 0152 10.663c-.764-1.517-1.733-2.316-3.055-2.316-1.854 0-2.462.9-2.688 1.374-.568 1.22.3 2.393 1.291 3.084.573.4 4.964 2.9 5.26 3.09a5.325 5.325 0 012.537 3.146 3.872 3.872 0 01-.784 3.094c-.945 1.157-2.562 1.743-4.813 1.743-6.056.001-7.343-4.518-7.343-4.518zm-15.143 0h2.055a2.182 2.182 0 011.939 1.195c.864 1.676 1.929 2.552 3.346 2.552a2.683 2.683 0 002.572-1.247c.879-1.458-.688-2.985-1.758-3.663-.166-.1-4.763-2.787-5-2.948-1.537-1.021-2.316-2.2-2.316-3.519 0-2.741 2.864-4.169 5.693-4.169a6.766 6.766 0 016.632 4.14h-1.898a1.86 1.86 0 01-1.668-1.042C36.09 9.146 35.12 8.347 33.8 8.347c-1.849 0-2.462.9-2.683 1.374-.568 1.22.291 2.393 1.291 3.084.568.4 4.964 2.9 5.26 3.09a5.318 5.318 0 012.532 3.147 3.866 3.866 0 01-.779 3.094c-.945 1.157-2.567 1.743-4.818 1.743-6.06 0-7.341-4.519-7.341-4.519zM1.924 23.646V8.358H0v-.946h1.924v-.36c0-5.213 3.482-6.485 7-7.046L8.973 0v.5l-.03.01c-3.406 1.013-3.964 2.9-3.964 5.81v1.092H9.4v.946H4.979v15.288zm74.1-.121V3.188h3.055v20.337z" fill="#fff"></path>
+                            </svg>
+                        </a>
+                    </h1>
+                    <ul class="gnb">
+                        <li class="gnb-list">
+                            <a href="#none">Hydrafirst</a>
+                            <ul class="lnb">
+                                <li class="lnb-list"><a href="#none">Firming Toner 135 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Emulsion 135 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Hya 100 Essence 30 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Hya 100 Essence 50 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Essence 30 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Cream 50 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Cream 100 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Eye Cream 30 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming White Essence 30 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Ampoule Mask 25 g*5ea</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Hand Cream 40 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Firming Sun Fluid 50 ml</a></li>
+                            </ul>
+                        </li>
+                        <li class="gnb-list">
+                            <a href="#none">Hyamune</a>
+                            <ul class="lnb" style="display: none;">
+                                <li class="lnb-list"><a href="#none">Hydrating Toner 120 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Hydrating Ampoule 32 ml</a></li>
+                                <li class="lnb-list"><a href="#none">Hydrating Cream 50 ml</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="prod-intr">
+                        <ul class="intr">
+                            <li class="intr-list">
+                                <a href="#none">Products</a>
+                            </li>
+                            <li class="intr-list">
+                                <a href="#none">Our Philosophy</a>
+                            </li>
+                        </ul>
+                        <button class="btn-box">
+                            <div class="btn-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main-container main">
+            <div class="main-content">
+                <!-- 비주얼 영역 -->
+                <div class="section-visual">
+                    <div class="swiper-container mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="visual-box">
+                                    <video src="../image/visual-my-video.mp4" style="width: 100%;" autoplay muted playsinline loop></video>
+                                    <div class="text-box">
+                                        <div>
+                                            <div class="count">
+                                                <span class="count-control">1</span>
+                                                <span class="count-control">/</span>
+                                                <span class="count-control">2</span>
+                                            </div>
+                                            <h2 class="title">always on your side</h2>
+                                            <p class="desc">힘들고 지친 당신을 위로하는 포슐라의 첫 번째 프로젝트</p>
+                                            <div class="btn">
+                                                <a href="#none" class="btn-link">김범수 음원 발매! MY 보러가기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>            
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="visual-box">
+                                    <video src="../image/visual-ad-video.mp4" style="width: 100%;" autoplay muted playsinline loop></video>
+                                    <div class="text-box">
+                                        <div>
+                                            <div class="count">
+                                                <span class="count-control">2</span>
+                                                <span class="count-control">/</span>
+                                                <span class="count-control">2</span>
+                                            </div>
+                                            <h2 class="title">Hydrafirst Firming Cream</h2>
+                                            <p class="desc">포슐라의 새로운 기준을 세우다</p>
+                                            <div class="btn">
+                                                <a href="#none" class="btn-link">지금 만나보세요</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <!-- 상품 영역 -->
+                <div class="product">
+                    <div class="section-intro">
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy">
+                                        <p class="copy-text">Campaign No.01</p>
+                                        <h4 class="copy-title">Always<br>On Your Side</h4>
+                                        <p class="copy-desc">다른 공간과 시간 그리고 각자 다른 방식으로 살아가는 우리, <br>겉보기엔 행복해 보여도 우리 모두 각자의 고민을 품고 있습니다. <br>힘들고 지친 당신을 위로하는 포슐라의 첫 번째 프로젝트</p>
+                                        <a href="#" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-right section-product-mbti-test">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/banner-mbti-2.jpg" class="img-box-photo" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy">
+                                        <h4 class="copy-title">Flower<br>Garden</h4>
+                                        <p class="copy-subtitle">“당신은 어떤 꽃인가요?”</p>
+                                        <p class="copy-desc">꽃으로 알아보는 나의 성향 테스트로 <br>힘들고 지친 의료진들에게 따뜻함을 전달해 주세요.</p>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-left section-product-moisture">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/header-0.jpg" class="img-box-photo" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy">
+                                        <h4 class="copy-title">Hydrafirst<br>Firming Cream</h4>
+                                        <p class="copy-subtitle">하이드라퍼스트 퍼밍 크림</p>
+                                        <p class="copy-desc">수분과 영양이 피부 사이사이 녹아들어 <br>매끄러운 피부결로 가꿔주는 수분탄력 크림</p>
+                                        <div class="copy-price-box">
+                                            <span class="copy-price-text">50 ml / 1.69 FL. OZ.</span>
+                                            <span class="copy-price-text">￦92,000</span>
+                                        </div>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-video">
+                        <div class="content-video">
+                            <video src="../image/main-video-02.mp4" autoplay muted playsinline loop></video>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-right section-product-moisturizing">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/header-1.jpg" class="img-box-photo" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy">
+                                        <h4 class="copy-title copy-title02">Hydrafirst<br>Hya 100 Essence</h4>
+                                        <p class="copy-subtitle">하이드라퍼스트 히아 100 에센스</p>
+                                        <p class="copy-desc">촘촘하고 탄력있는 보습감을 주는 <br>흰목이버섯 추출물 100% 수분에센스</p>
+                                        <div class="copy-price-box">
+                                            <span class="copy-price-text">30 ml / 1.01 FL. OZ.</span>
+                                            <span class="copy-price-text">￦78,000</span>
+                                        </div>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-left section-cream">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/header-2.jpg" class="img-box-photo" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy"> 
+                                        <h4 class="copy-title">Hydrafirst<br>Firming<br>Eye Cream</h4>
+                                        <p class="copy-subtitle">하이드라퍼스트 퍼밍 아이 크림</p>
+                                        <p class="copy-desc">눈가, 입가, 목 주름 등 탄력을 잃기 쉬운 피부에 <br>촉촉한 수분을 채우는 수분탄력 아이 크림</p>
+                                        <div class="copy-price-box">
+                                            <span class="copy-price-text">30 ml / 1.01 FL. OZ.</span>
+                                            <span class="copy-price-text">￦78,000</span>
+                                        </div>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-horizontal-sroll">
+                        <div class="scroll-motion-text">
+                            <img src="../image/logo-rolling.svg" class="scroll-motion-img" alt="">
+                        </div>
+                    </div>
+                    <div class="section-feature">
+                        <div class="text-list-box">
+                            <ul class="text-list">
+                                <li class="text-item">
+                                    <p class="text-title">Our <br>Philosophy</p>
+                                    <p class="text-desc">포슐라는 당신의 아름다운 삶을 위해 아름다움을 <br>준비하고 관리하며, 개선하려는 모든 사람들을 위한 <br>브랜드입니다.</p>
+                                </li>
+                                <li class="text-item">
+                                    <p class="text-title">Fundamental <br>Cosmetics</p>
+                                    <p class="text-desc">당신의 건강한 피부를 위한 신뢰할 수 있고 검증된 <br>고품질의 제품을 제공합니다.</p>
+                                </li>
+                                <li class="text-item">
+                                    <p class="text-title">New Ingredients <br>And Formula</p>
+                                    <p class="text-desc">수많은 피부 경험을 기반으로 새로운 원료와 공식을 <br>개발하여 코스메틱 업계를 선도합니다.</p>
+                                </li>
+                                <li class="text-item">
+                                    <p class="text-title">One's <br>True Self</p>
+                                    <p class="text-desc">엄선된 원료, 그리고 최고의 공식과 함께 당신을 <br>향한 아낌없는 마음을 담았습니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-center product-probiotics">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/header-hydrafirst.jpg" class="full-img" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy"> 
+                                        <h4 class="copy-title">Hydrafirst</h4>
+                                        <p class="copy-desc"><strong>포슐라만의 스킨케어 솔루션, B₅바이옴™</strong> <br>프로바이오틱스와 진정과 보습 효과가 뛰어난 판테놀의 새로운 조합으로 <br>수분 가득한 탄력있는 피부를 유지해보세요.</p>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product-grid section-product-hydra-first-grid">
+                        <div class="product-section">
+                            <div class="product-inner">
+                                <ul class="product-list">
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product01.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hydrafirst</p>
+                                            <p class="product-text">하이드라퍼스트 <br>퍼밍 크림 50 ml</p>
+                                            <span class="product-price">￦92,000</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product02.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hydrafirst</p>
+                                            <p class="product-text">하이드라퍼스트 <br>퍼밍 에센스 30 ml</p>
+                                            <span class="product-price">￦78,000</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product03.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hydrafirst</p>
+                                            <p class="product-text">하이드라퍼스트 <br>히아 100 에센스 30 ml</p>
+                                            <span class="product-price">￦78,000</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product04.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hydrafirst</p>
+                                            <p class="product-text">하이드라퍼스트 <br>퍼밍 화이트 에센스 30 ml</p>
+                                            <span class="product-price">￦78,000</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product section-product-center product-hyamune">
+                        <div class="img-box">
+                            <div class="img-box-motion">
+                                <img src="../image/header-hyamune.jpg" class="full-img" alt="">
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="inner-center">
+                                <div class="content">
+                                    <div class="copy"> 
+                                        <h4 class="copy-title copy-title02">Hyamune</h4>
+                                        <p class="copy-desc"><strong>피부 영양·수분력 강화 솔루션</strong> <br>지친 피부의 유수분 밸런스를 바로잡아 피부 자체의 수분 보유력을 키워주고 <br>탄탄한 영양까지 가득 채워주어 피부 케어에 도움을 줍니다.</p>
+                                        <a href="#none" class="copy-more-link">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-product-grid section-product-Hyamune-grid">
+                        <div class="product-section">
+                            <div class="product-inner">
+                                <ul class="product-list">
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product-1.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hyamune</p>
+                                            <p class="product-text">히아뮨 하이드레이팅 <br>토너 50 ml</p>
+                                            <span class="product-price">￦49,000</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product-2.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hyamune</p>
+                                            <p class="product-text">히아뮨 하이드레이팅 <br>토너 32 ml</p>
+                                            <span class="product-price">￦54,000</span>
+                                        </a>
+                                    </li>
+                                    <li class="product-item">
+                                        <a href="#none" class="product-item-a">
+                                            <img src="../image/product-3.png" class="product-img" alt="">
+                                            <p class="product-subtext">Hyamune</p>
+                                            <p class="product-text">히아뮨 하이드레이팅 <br>토너 50 ml</p>
+                                            <span class="product-price">￦64,000</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 아이콘 -->
+            <ul class="sns-icon-link">
+                <li class="icon youtube">
+                    <a href="#none" class="icon-link"></a>
+                </li>
+                <li class="icon instagram">
+                    <a href="#none" class="icon-link"></a>
+                </li>
+                <li class="icon facebook">
+                    <a href="#none" class="icon-link"></a>
+                </li>
+            </ul>
+            <button class="shop-link"></button>
+            <!-- awwwards -->
+            <div id="awwwards" style="position: fixed; z-index: 2; transform: translateY(-50%); top: calc(50% + -1px); right: 0">
+                <a href="#none" style="display: block;" target="_blank">
+                    <img src="../image/awwwards.png" style="display: block;" alt="">
+                </a>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="inner">
+                <div class="content-wrap">
+                    <div class="footer-logo">
+                        <img src="../image/logo-header.svg" class="footer-logo-img" alt="">
+                    </div>
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <em class="point">상호명</em> 포슐라
+                        </li>
+                        <li class="info-item">
+                            <em class="point">사업자등록번호</em> 705-87-01541
+                        </li>
+                        <li class="info-item">
+                            <em class="point">주소</em> 서울특별시 강남구 도산대로 229, 6층(신사동)
+                        </li>
+                    </ul>
+                    <ul class="compy-list">
+                        <li class="compy-item">
+                            <em class="point">대표자</em> 이향기
+                        </li>
+                        <li class="compy-item">
+                            <em class="point">이메일</em> 
+                            <a href="mailto:help@fossula.com" class="mail">help@fossula.com</a>
+                        </li>
+                    </ul>
+                    <ul class="family-site-list">
+                        <li class="family-site-item">
+                            <a href="#none" class="family-site-link">Family Site</a>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="footer-bottom-into">
+                        <p class="copyright">ⓒ 2020. VU’OR Corp. All Rights Reserved.</p>
+                        <div class="sns-social">
+                            <a href="#none" class="sns-link">Youtube</a>
+                            <a href="#none" class="sns-link">Instagram</a>
+                            <a href="#none" class="sns-link">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script async src="../js/main.js"></script>
+    <script async src="../js/gsap-scroll.js"></script>
+    <script>
+        $(document).on('click', 'a[href="#none"]', function(e) {
+            e.preventDefault()
+        });
+    </script>
 </body>
 </html>

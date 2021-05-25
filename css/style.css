@@ -1,1 +1,318 @@
 @charset "utf-8";
+
+.section-visual {
+    /* width: 100vw; */
+    height: 100vh;
+}
+
+.section-visual .visual-box {
+    position: relative;
+}
+
+.section-visual video {
+    width: 100%;
+    height: 100vh;
+    vertical-align: top;
+    object-fit: cover;
+}
+
+.section-visual .text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.section-visual .text-box>div {
+    position: relative;
+}
+
+.section-visual .btn-slider {
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 0;
+}
+
+.section-visual .btn-slider-control {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #b4c0c6;
+    cursor: pointer;
+}
+
+.section-visual .btn-slider-control.on {
+    background-color: #fff;
+}
+
+.section-visual .btn-slider-control+.btn-slider-control {
+    margin-left: 12px;
+}
+
+.section-visual .count {
+    margin-bottom: 10px;
+}
+
+.section-visual .count-control {
+    color: #fff;
+}
+
+.section-visual .title {
+    /* position: absolute; */
+    font-size: 70px;
+    color: #fff;
+}
+
+.section-visual .desc {
+    font-family: var(--NotoSansKR);
+    font-size: 16px;
+    margin-bottom: 38px;
+    color: #fff;
+}
+
+.section-visual .btn-link {
+    display: inline-block;
+    width: 252px;
+    height: 42px;
+    line-height: 42px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 21px;
+    font-size: 14px;
+    font-family: var(--NotoSansKR);
+    transition: all 0.3s ease;
+}
+
+.section-visual .btn-link:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.sns-icon-link {
+    position: fixed;
+    bottom: 60px;
+    left: 80px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    font-size: 0;
+}
+
+.sns-icon-link .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.sns-icon-link .icon+.icon {
+    margin-top: 15px;
+}
+
+.sns-icon-link .youtube {
+    background: url("../image/btn-youtube.svg") no-repeat 0 0 / 40px auto;
+}
+
+.sns-icon-link .instagram {
+    background: url("../image/btn-instagram.svg") no-repeat 0 0 / 40px auto;
+}
+
+.sns-icon-link .facebook {
+    background: url("../image/btn-facebook.svg") no-repeat 0 0 / 40px auto;
+}
+
+.sns-icon-link .icon-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.shop-link {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    z-index: 110;
+    width: 55px;
+    height: 55px;
+    background: url('../image/btn-store.svg') no-repeat 0 0 / 55px auto;
+    cursor: pointer;
+}
+
+/* 메인 상품 콘텐츠 */
+.section-intro .copy {
+    padding: 164px 0 350px;
+}
+
+.section-product-mbti-test .box {
+    margin-top: -300px;
+}
+
+.section-product-mbti-test .copy-title {
+    font-size: 180px;
+}
+
+.section-product-mbti-test .copy {
+    padding: 164px 0 350px;
+}
+
+.section-product-mbti-test .copy-desc {
+    margin-bottom: 40px;
+}
+
+.section-product-moisture .box {
+    margin-top: -300px;
+}
+
+.section-product-moisture .copy-title {
+    font-size: 180px;
+}
+
+.section-product-moisture .img-box:after {
+    height: 25vh;
+}
+
+.section-product-moisture .copy {
+    padding: 164px 0 350px;
+}
+
+.section-product-moisture .copy-desc {
+    margin-bottom: 32px;
+}
+
+.section-product-moisture .copy-price-box {
+    margin-bottom: 52px;
+}
+
+.section-video .content-video {
+    text-align: center;
+    width: calc((100vw * 0.666) * 1);
+    max-width: 1706px;
+    margin: 0 auto;
+    padding: 0 0 350px 0;
+}
+
+.section-video .content-video video {
+    vertical-align: top;
+    width: 100%;
+}
+
+.section-product-moisturizing .box {
+    margin-top: -300px;
+}
+
+.section-product-moisturizing .copy {
+    padding: 164px 0 350px;
+}
+
+.section-product-moisturizing .copy-title {
+    font-size: 180px;
+}
+
+.section-product-moisturizing .copy-desc {
+    margin-bottom: 32px;
+}
+
+.section-product-moisturizing .copy-price-box {
+    margin-bottom: 52px;
+}
+
+.section-cream .box {
+    margin-top: -300px;
+}
+
+.section-cream .copy {
+    padding: 164px 0 350px;
+}
+
+.section-cream .copy-title {
+    font-size: 180px;
+}
+
+.section-cream .copy-desc {
+    margin-bottom: 32px;
+}
+
+.section-cream .copy-price-box {
+    margin-bottom: 52px;
+}
+
+.section-horizontal-sroll {
+    width: 100%;
+}
+
+.section-horizontal-sroll .scroll-motion-img {
+    display: block;
+    width: 100%;
+}
+
+.section-feature .text-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 350px 0 0 0;
+}
+
+.section-feature .text-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 160px;
+}
+
+.section-feature .text-title {
+    font-size: 56px;
+    margin-bottom: 24px;
+    line-height: 100%;
+}
+
+.section-feature .text-desc {
+    font-family: var(--NotoSansKR);
+}
+
+
+.product-probiotics .box {
+    margin-top: -300px;
+}
+
+.product-probiotics .copy {
+    padding: 164px 0 150px;
+}
+
+.product-probiotics .copy-title {
+    font-size: 180px;
+}
+
+.product-probiotics .copy-desc {
+    margin-bottom: 40px;
+}
+
+.product-probiotics .copy-price-box {
+    margin-bottom: 52px;
+}
+
+.product-hyamune .box {
+    margin-top: -300px;
+}
+
+.product-hyamune .copy {
+    padding: 164px 0 150px;
+}
+
+.product-hyamune .copy-title {
+    font-size: 180px;
+}
+
+.product-hyamune .copy-desc {
+    margin-bottom: 40px;
+}
+
+.product-hyamune .copy-price-box {
+    margin-bottom: 52px;
+}

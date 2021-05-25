@@ -1,1 +1,494 @@
 @charset "utf-8";
+
+:root {
+    --NotoSansKR: 'Noto Sans KR', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+}
+
+body {
+    min-width: 1280px;
+    font-family: 'Unna', serif;
+    /* font-family: var(--NotoSansKR); */
+    /* font-family: var(--Roboto); */
+}
+
+.open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 593px;
+    background-color: #fff;
+}
+
+/* 헤더 */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* 스크롤하면 transition 효과 */
+.header path,
+.header .gnb-list a,
+.header .intr-list a,
+.header .btn-menu span {
+    transition: all 0.3s ease;
+}
+
+/* 헤더 마우스 오버 */
+.header.fixed:hover path {
+    fill: #000;
+}
+
+.header.fixed .gnb-list a:hover {
+    color: #000;
+}
+
+.header.fixed:hover .intr-list a {
+    color: #000;
+}
+
+.header.fixed:hover .btn-menu span {
+    background-color: #000;
+}/* 헤더 마우스 오버 */
+
+/* 스크롤하면 .fixed 클래스 추가 */
+.header.fixed path {
+    fill: #000;
+}
+
+.header.fixed .gnb-list a {
+    color: #000;
+}
+
+.header.fixed .intr-list a {
+    color: #000;
+}
+
+.header.fixed .btn-menu span {
+    background-color: #000;
+}/* 스크롤하면 헤더 효과 */
+
+.header .inner-center {
+    /* width: 1800px; */
+    /* margin: 0 auto; */
+    padding: 0 60px;
+}
+
+.header .content {
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 96px;
+    height: auto;
+    margin-right: 136px;
+}
+
+.header .logo-link {
+    display: block;
+}
+
+.header .gnb {
+    display: flex;
+    align-items: center;
+}
+
+.header .gnb-list {
+    position: relative;
+    margin-right: 70px;
+}
+
+.header .gnb-list.on .lnb {
+    /* opacity: 1; */
+    display: block;
+}
+
+.header .gnb-list a {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* 헤더 lnb 메뉴 */
+.header .lnb {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 200;
+    white-space: nowrap;
+    /* opacity: 0; */
+    display: none;
+}
+
+.header .lnb-list {
+    padding: 2px 0;
+    margin: 2px 0;
+}
+
+.header .lnb-list a {
+    color: #999;
+    width: 100%;
+
+}
+
+.header .prod-intr {
+    line-height: 40px;
+    height: 40px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header .intr {
+    display: flex;
+    align-items: center;
+}
+
+.header .intr-list+.intr-list {
+    margin-left: 70px;
+}
+
+.header .intr-list a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.header .btn-box {
+    margin-left: 70px;
+    background: none;
+}
+
+.header .btn-menu {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.header .btn-menu span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.header .btn-menu span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.header .btn-menu span:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+
+.header .btn-menu span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+
+.header .btn-menu span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+/* 공통 콘텐츠 영역 */
+.product .box {
+    position: relative;
+    z-index: 1;
+}
+
+.product .inner-center {
+    width: calc(calc((100vw * 0.666) / 4) * 4);
+    margin: 0 auto;
+}
+
+.product .copy {
+    padding: 164px 0 350px;
+}
+
+.product .copy-text {
+    margin-bottom: 32px;
+    font-size: 18px;
+    font-family: var(--Roboto);
+}
+
+.product .copy-title {
+    margin-bottom: 32px;
+    line-height: 100%;
+    font-size: 140px;
+}
+
+.product .copy-desc {
+    margin-bottom: 70px;
+    line-height: 28px;
+    font-size: 16px;
+    font-family: var(--NotoSansKR);
+}
+
+.product .copy-more-link {
+    display: inline-block;
+    padding: 0 26px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 13px;
+    font-family: var(--Roboto);
+    border-radius: 24px;
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+.product .copy-more-link:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.product .img-box {
+    width: calc(100vw - 80px - calc((100vw * 0.334) / 2 - 80px));
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+}
+
+.section-product-center .img-box {
+    width: 100%;
+    margin: 0;
+}
+
+.section-product-left .img-box {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.product .img-box:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0.01) 95%);
+    pointer-events: none;
+}
+
+.product .img-box-motion {
+    overflow: hidden;
+}
+
+.product .img-box-photo {
+    display: block;
+    width: 100%;
+}
+
+.product .copy-subtitle {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -0.04px;
+    margin-bottom: 30px;
+    font-family: var(--NotoSansKR);
+}
+
+.product .copy-price-text {
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #666;
+    font-family: var(--NotoSansKR);
+}
+
+.product .copy-price-text::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 0;
+    width: 1px;
+    height: 12px;
+    background-color: #eee;
+}
+
+.product .copy-price-text:last-child:after {
+    content: none;
+}
+
+/* 상품 전체 이미지 */
+.product .full-img {
+    display: block;
+    width: 100%;
+}
+
+/* 메인 상품 리스트 */
+.section-product-grid .product-list {
+    display: flex;
+    width: calc(calc((100vw * 0.666) / 4) * 4);
+    margin: 0 auto;
+    padding-bottom: 200px;
+}
+
+.section-product-grid .product-item {
+    width: 25%;
+}
+
+.section-product-grid .product-item:hover .product-img {
+    background-color: #efefef;
+}
+
+.section-product-grid .product-img {
+    width: 100%;
+    display: block;
+    background-color: #f7f7f7;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.section-product-grid .product-subtext {
+    font-size: 18px;
+    color: #999;
+    margin-bottom: 10px;
+    margin-top: 27px;
+}
+
+.section-product-grid .product-text {
+    font-size: 18px;
+    font-family: var(--NotoSansKR);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.section-product-grid .product-price {
+    font-size: 18px;
+    font-family: var(--Roboto);
+}
+
+
+
+
+
+
+/* 푸터 */
+.footer {
+    background-color: #000;
+}
+
+.footer .inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .content-wrap {
+    position: relative;
+    padding: 80px 0 90px;
+}
+
+.footer .footer-logo {
+    width: 96px;
+    height: 24px;
+    margin-bottom: 53px;
+}
+
+.footer .footer-logo-img {
+    width: 100%;
+}
+
+.footer .info-list {
+    display: flex;
+    font-family: var(--NotoSansKR);
+}
+
+.footer .info-item {
+    font-size: 12px;
+    margin: 0 14px 15px 0;
+    color: #fff;
+}
+
+.footer .point {
+    font-weight: 700;
+}
+
+.footer .compy-list {
+    display: flex;
+    font-family: var(--NotoSansKR);
+    margin-bottom: 16px;
+}
+
+.footer .compy-item {
+    font-size: 12px;
+    margin: 0 14px 15px 0;
+    color: #fff;
+}
+
+.footer .compy-item .mail {
+    color: #fff;
+}
+
+.footer .family-site-list {
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+.footer .family-site-item {
+    font-size: 12px;
+    margin-right: 0 14px 15px 0;
+    color: #fff;
+}
+
+.footer .family-site-link {
+    font-size: 12px;
+    color: #fff;
+    font-family: var(--NotoSansKR);
+    text-decoration: underline;
+}
+
+.footer .family-site-link::after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../image/menu-dropdown-arrow.svg') no-repeat;
+    margin-left: 8px;
+    vertical-align: -3px;
+}
+
+.footer .footer-bottom-into {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-top: 34px;
+    border-top: 1px solid #323232;
+}
+
+.footer .copyright {
+    font-size: 13px;
+    color: #666;
+    font-family: var(--NotoSansKR);
+}
+
+.footer .sns-social {
+    font-size: 0;
+}
+
+.footer .sns-link {
+    font-size: 12px;
+    color: #fff;
+    font-family: var(--NotoSansKR);
+}
+
+.footer .sns-link:hover {
+    text-decoration: underline;
+}
+
+.footer .sns-link+.sns-link {
+    margin-left: 10px;
+}
