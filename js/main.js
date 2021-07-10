@@ -16,6 +16,14 @@ $(document).ready(function(){
     });
 
     // 헤더 메뉴
+    $gnblist.mouseenter(function(){
+        $(this).children(".lnb").stop().animate({ height: '593px'});
+    })
+    .mouseleave(function(){
+        $(this).children(".lnb").stop().animate({ height: '0'});
+    });
+
+    // 헤더 메뉴
     // $gnblist.mouseenter(function(){
     //     $(this).children(".lnb").stop().slideDown(200);
     //     $header.stop().animate({ height: '593px', backgroundColor: 'red'}); // 마우스 오버 하면 헤더 높이 200px 

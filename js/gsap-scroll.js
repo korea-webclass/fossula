@@ -14,12 +14,41 @@ $(document).ready(function(){
     //     }
     // });
 
-    gsap.from('.section-visual .text-box', {
-        y: 600,
-        duration: 1,
+    // 메인 비주얼 텍스트
+    // gsap.from('.section-visual .text-box', {
+    //     y: 600,
+    //     duration: 1,
+    //     opacity: 0,
+    // });
+
+    gsap.from('.section-visual .text-box .count', {
+        y: 20,
         opacity: 0,
+        duration: 1,
+        delay: 0.5,
+    });
+    gsap.from('.section-visual .text-box .title', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        delay: 1,
+    });
+    gsap.from('.section-visual .text-box .desc', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        delay: 1.5,
+    });
+    gsap.from('.section-visual .text-box .btn', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        delay: 2,
     });
 
+
+
+    
     // 콘텐츠 인트로
     gsap.from('.product .copy', {
         duration: 1,
@@ -27,6 +56,7 @@ $(document).ready(function(){
         opacity: 0,
         scrollTrigger: '.product .copy',
     });
+    
 
     // 콘텐츠 인트로
     // gsap.from('.product .copy-title', {

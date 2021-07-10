@@ -124,7 +124,9 @@ body {
     z-index: 200;
     white-space: nowrap;
     /* opacity: 0; */
-    display: none;
+    /* display: none; */
+    overflow: hidden;
+    height: 0px;
 }
 
 .header .lnb-list {
